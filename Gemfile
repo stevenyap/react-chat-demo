@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ## Custom Production Gems
 gem 'react-rails', '~> 1.0'
 gem 'slim-rails'
-gem 'thin'
+gem 'thin-rails'
 gem 'faye-rails'
 ## End Custom Gems
 
@@ -47,5 +47,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
 
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
