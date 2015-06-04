@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603082732) do
+ActiveRecord::Schema.define(version: 20150603085115) do
 
-  create_table "messages", force: :cascade do |t|
+  create_table "chat_messages", force: :cascade do |t|
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"

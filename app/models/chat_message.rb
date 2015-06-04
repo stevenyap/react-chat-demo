@@ -1,3 +1,3 @@
-class Message < ActiveRecord::Base
+class ChatMessage < ActiveRecord::Base
   validates :message, presence: true
 end
