@@ -1,7 +1,6 @@
 DOM = React.DOM
 window.fayeClient = new Faye.Client('/faye')
 
-# By React
 window.ChatMessages = React.createClass
   displayName: 'ChatMessages Component'
 
@@ -19,3 +18,16 @@ window.ChatMessages = React.createClass
       className: 'chat-messages'
       this.state.messages.map (message) ->
         DOM.p null, message
+
+$ ->
+  $("#message-form").submit (e) ->
+    $.ajax
+      url: $(this).attr('action')
+      type: 'POST'
+      data: $(this).serializeArray()
+      dataType: 'script'
+      success: (data) ->
+        # do nothing for now
+      error: (xhr, status, err) ->
+        console.error(this.props.url, status, err.toString());
+    e.preventDefault()

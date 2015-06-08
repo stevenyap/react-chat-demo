@@ -4,6 +4,12 @@ class ChatsController < ApplicationController
   end
 
   def run
-    @message = ChatMessage.create!(message: 'Faye works!')
+    @message = ChatMessage.create!(message: posted_message)
+  end
+
+  private
+
+  def posted_message
+    params.require(:posted_message)
   end
 end
