@@ -2,6 +2,9 @@ h1 Welcome to React Chat Demo
 
 = react_component('ChatMessages')
 
+h1 React form with jQuery
+= react_component('ChatForm')
+
 h1 HTML form with jQuery
 = form_tag run_path(format: 'js'), method: :post, id: 'message-form' do
   = label_tag :posted_message, 'Enter your message:'
