@@ -19,8 +19,3 @@ window.ChatMessages = React.createClass
       className: 'chat-messages'
       this.state.messages.map (message) ->
         DOM.p null, message
-
-# By normal javascript
-$ ->
-  fayeClient.subscribe '/comments', (payload) ->
-    $('#comments').prepend(payload.message) if payload.message

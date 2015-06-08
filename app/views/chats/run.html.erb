@@ -1,5 +1,5 @@
 <%= javascript_tag do %>
   publisher = fayeClient.publish('/comments', {
-    message: '<p><%= @message.message %></p>'
+    message: '<%= @message.message %>'
   });
 <% end %>
