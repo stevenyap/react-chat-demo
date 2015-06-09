@@ -1,7 +1,7 @@
 DOM = React.DOM
 window.fayeClient = new Faye.Client('/faye')
 
-window.ChatBox = React.createClass
+@ChatBox = React.createClass
   displayName: 'ChatBox'
 
   getInitialState: ->
@@ -20,7 +20,7 @@ window.ChatBox = React.createClass
         messages: this.state.messages
       React.createElement(ChatForm)
 
-window.ChatMessagesClass = React.createClass
+ChatMessagesClass = React.createClass
   displayName: 'ChatMessages'
 
   render: ->
@@ -31,7 +31,7 @@ window.ChatMessagesClass = React.createClass
 
 ChatMessages = React.createFactory(ChatMessagesClass)
 
-window.ChatForm = React.createClass
+ChatForm = React.createClass
   displayName: 'Chat Form'
 
   handleSubmit: (e) ->
