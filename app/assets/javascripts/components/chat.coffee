@@ -4,15 +4,6 @@ window.fayeClient = new Faye.Client('/faye')
 window.ChatBox = React.createClass
   displayName: 'ChatBox'
 
-  render: ->
-    DOM.div
-      className: 'chat-box'
-      React.createElement(ChatMessages)
-      React.createElement(ChatForm)
-
-window.ChatMessages = React.createClass
-  displayName: 'ChatMessages Component'
-
   getInitialState: ->
     fayeClient.subscribe '/comments', this.onMessage
     @messages = []
@@ -24,8 +15,17 @@ window.ChatMessages = React.createClass
 
   render: ->
     DOM.div
+      className: 'chat-box'
+      React.createElement(ChatMessages, messages: this.state.messages)
+      React.createElement(ChatForm)
+
+window.ChatMessages = React.createClass
+  displayName: 'ChatMessages'
+
+  render: ->
+    DOM.div
       className: 'chat-messages'
-      this.state.messages.map (message) ->
+      this.props.messages.map (message) ->
         DOM.p null, message
 
 window.ChatForm = React.createClass
