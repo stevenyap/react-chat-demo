@@ -1,6 +1,15 @@
 DOM = React.DOM
 window.fayeClient = new Faye.Client('/faye')
 
+window.ChatBox = React.createClass
+  displayName: 'ChatBox'
+
+  render: ->
+    DOM.div
+      className: 'chat-box'
+      React.createElement(ChatMessages)
+      React.createElement(ChatForm)
+
 window.ChatMessages = React.createClass
   displayName: 'ChatMessages Component'
 
