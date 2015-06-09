@@ -19,18 +19,6 @@ window.ChatMessages = React.createClass
       this.state.messages.map (message) ->
         DOM.p null, message
 
-$ ->
-  $("#message-form").submit (e) ->
-    $.ajax
-      url: $(this).attr('action')
-      type: 'POST'
-      data: $(this).serializeArray()
-      success: (data) ->
-        # do nothing for now
-      error: (xhr, status, err) ->
-        console.error(this.props.url, status, err.toString());
-    e.preventDefault()
-
 window.ChatForm = React.createClass
   displayName: 'Chat Form'
 
