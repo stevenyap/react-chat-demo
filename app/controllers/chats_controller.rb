@@ -1,6 +1,6 @@
 class ChatsController < ApplicationController
   def index
-    @messages = ChatMessage.all.order(created_at: :asc)
+    @messages = ChatMessage.all.order(created_at: :desc).limit(10)
   end
 
   def run

@@ -1,13 +1,13 @@
 DOM = React.DOM
-window.fayeClient = new Faye.Client('/faye')
+@fayeClient = new Faye.Client('/faye')
 
 @ChatBox = React.createClass
   displayName: 'ChatBox'
 
   getInitialState: ->
     fayeClient.subscribe '/comments', this.onMessage
-    @messages = []
-    messages: []
+    @messages = @props.messages
+    messages: @messages
 
   onMessage: (message) ->
     @messages.push(message.message)

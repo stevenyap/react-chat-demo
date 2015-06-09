@@ -1,4 +1,4 @@
 h1 Welcome to React Chat Demo
 
 h2 Root Component Pattern
-= react_component('ChatBox')
+= react_component('ChatBox', messages: @messages.map { |m| m.message })
