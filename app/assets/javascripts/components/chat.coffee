@@ -16,10 +16,11 @@ window.ChatBox = React.createClass
   render: ->
     DOM.div
       className: 'chat-box'
-      React.createElement(ChatMessages, messages: this.state.messages)
+      ChatMessages
+        messages: this.state.messages
       React.createElement(ChatForm)
 
-window.ChatMessages = React.createClass
+window.ChatMessagesClass = React.createClass
   displayName: 'ChatMessages'
 
   render: ->
@@ -27,6 +28,8 @@ window.ChatMessages = React.createClass
       className: 'chat-messages'
       this.props.messages.map (message) ->
         DOM.p null, message
+
+ChatMessages = React.createFactory(ChatMessagesClass)
 
 window.ChatForm = React.createClass
   displayName: 'Chat Form'
